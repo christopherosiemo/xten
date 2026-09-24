@@ -1,6 +1,14 @@
 # Status
 
-Snapshot date: **2026-09-24 16:22:43 +01:00** (Europe/London). This records the M00 acceptance decision already made by the product owner after independent review. See the [product contract](PRODUCT.md), [roadmap](ROADMAP.md) and [acceptance register](ACCEPTANCE.md).
+Snapshot date: **2026-09-24 16:52:06 +01:00** (Europe/London). M00 remains accepted; M01-T01 architecture is ready for review and M01 has not been accepted. See the [product contract](PRODUCT.md), [roadmap](ROADMAP.md), [acceptance register](ACCEPTANCE.md) and [architecture index](architecture/README.md).
+
+## M01-T01 inspected repository state
+
+- Repository: `christopherosiemo/xten`; sanitised origin: `https://github.com/christopherosiemo/xten.git`.
+- Verified main and task base: `bb00f71c87aa9a0a0e78e2d30f5937d0d8855f3a`, matching remote main at preflight.
+- Branch: `docs/xten-m01-architecture-foundation`, created from that clean base.
+- Preflight tree: clean; tracked project files were the seven M00 documentation/configuration files only.
+- The following repository observations retain their own dates; this M01 task did not reconfigure visibility, access or branch protection.
 
 ## Actual inspected repository state
 
@@ -21,19 +29,30 @@ GitHub CLI read-only queries verified repository identity, default branch `main`
 
 | Item | Current state |
 | --- | --- |
-| Current milestone | M00 — Product contract and repository working rules |
-| Current task | M00-T02 — Record M00 acceptance and merge product contract |
-| Task state | Acceptance decision recorded |
+| Current milestone | M01 — Architecture, threat model and finite support matrix |
+| Current task | M01-T01 — Core architecture and domain boundaries |
+| Task state | READY_FOR_REVIEW |
 | M00 state | ACCEPTED |
-| M01 state | NOT_STARTED |
+| M01 state | IN_PROGRESS |
 | Accepted milestones | 1 of 22 |
 | Application functionality | Not implemented |
-| Product verification | NOT_RUN |
-| Application tests for M00 | NOT_APPLICABLE |
+| Product verification | REQ-001 through REQ-042 remain NOT_RUN |
+| Application tests for M01-T01 | NOT_APPLICABLE; documentation-only task |
 | Product acceptance requirements | REQ-001 through REQ-042 remain NOT_RUN; planned requirements, not implemented tests |
-| Reviewer acceptance | M00 accepted after independent review; later milestones not accepted |
-| Next milestone | M01 — Architecture, threat model and finite support matrix |
-| Next implementation task | To be issued separately after this merge is independently reviewed |
+| Reviewer acceptance | M00 accepted after independent review; M01 not accepted |
+| Next task | To be issued separately after M01-T01 review; planned M01-T02 is not started |
+
+## M01 architecture work
+
+M01-T01 proposes the [system architecture](architecture/SYSTEM_ARCHITECTURE.md), [domain model](architecture/DOMAIN_MODEL.md) and seven PROPOSED [architecture decisions](architecture/README.md). The documents define boundaries and invariants only; they do not implement or verify product behaviour. M01-T01 alone does not satisfy REQ-001, because the finite versioned support matrix, financial policies, complete threat model and measurable targets remain outstanding.
+
+Planned follow-up labels, subject to separate task issuance:
+
+- M01-T02 — financial semantics and finite support matrix, including provider mappings and pilot scope.
+- M01-T03 — threat model, data classification and abuse cases, including retention/residency decisions.
+- M01-T04 — measurable operational, security and performance targets, architecture traceability and final M01 review preparation.
+
+Before M02 introduces proprietary application code, the repository owner must explicitly decide repository visibility/licensing and branch-protection policy. This task does not change those settings.
 
 ## M00 acceptance record
 
@@ -42,14 +61,14 @@ GitHub CLI read-only queries verified repository identity, default branch `main`
 - **Accepted reviewed revision:** `29f477caff6701bf609ed39cf067fe97bc52527e`.
 - **Review history:** Initial M00-T01 review required one repair to remove a stale task-specific file whitelist from durable `AGENTS.md`; M00-T01-R1 corrected it and passed independent review.
 - **Limitation:** M00 acceptance does not assert that any application capability, cloud connector, financial calculation, security control or production system has been implemented or verified. It does not claim security certification or operational readiness.
-- **Product verification:** REQ-001 through REQ-042 remain NOT_RUN. M01 has not started.
+- **Product verification at M00 acceptance:** REQ-001 through REQ-042 were NOT_RUN. M01 started only after M00 acceptance and is now IN_PROGRESS.
 
 ## Milestone state
 
 | ID | Name | State |
 | --- | --- | --- |
 | M00 | Product contract and repository working rules | ACCEPTED |
-| M01 | Architecture, threat model and finite support matrix | NOT_STARTED |
+| M01 | Architecture, threat model and finite support matrix | IN_PROGRESS |
 | M02 | Runnable engineering foundation and automated checks | NOT_STARTED |
 | M03 | Identity, tenant isolation and client onboarding | NOT_STARTED |
 | M04 | Financial data model and reference test cases | NOT_STARTED |
@@ -77,7 +96,7 @@ GitHub CLI read-only queries verified repository identity, default branch `main`
 - Owner to decide licensing and intellectual-property policy before adding a licence or granting additional distribution rights; no licence is added by this task.
 - Appoint product, architecture, security, financial and client acceptance reviewers for later milestones, and define their decision rights and evidence sign-off process.
 - Agree customer engagement authorisation, data classification, retention/deletion, residency, audit access and offboarding obligations, including backups and legal retention where applicable.
-- Through a separately issued M01 task, approve the finite versioned release support matrix, pilot subset, selected integrations, action boundaries and measurable performance/recovery/workload requirements. Proposed technology choices remain subject to architecture review.
+- Through later M01 tasks, approve the finite versioned release support matrix, pilot subset, selected integrations, action boundaries and measurable performance/recovery/workload requirements. Proposed technology choices remain subject to architecture review.
 
 ## External dependencies for future stages
 
@@ -86,4 +105,4 @@ GitHub CLI read-only queries verified repository identity, default branch `main`
 - Representative real-world pilot data, client participation, an agreed baseline and an observed implementation outcome; evidence must be stored under appropriate access controls outside this repository.
 - Appropriate human security and financial review, operational recovery/workload exercises and full-scope client acceptance evidence.
 
-These dependencies constrain future acceptance; none was provisioned or connected in M00-T01. Product verification remains NOT_RUN pending implementation, agreed scope and authorised evidence. No application code, dependency manifests, infrastructure, workflows or production actions are part of this change. M01 has not started.
+These dependencies constrain future acceptance; none was provisioned or connected in M01-T01. Product verification remains NOT_RUN pending implementation, agreed scope and authorised evidence. No application code, dependency manifests, infrastructure, workflows or production actions are part of this change. M01 is IN_PROGRESS; M02 has not started.
