@@ -30,4 +30,4 @@ Before each task, read [README](README.md), [PRODUCT](docs/PRODUCT.md), [ROADMAP
 - Do not modify repository visibility, licensing or access policies without explicit authorisation. Record unresolved administrative decisions instead.
 - Keep read/collection access separate from execution access. Read-only authorisation never implies permission to change customer resources.
 
-For M00-T01, only `README.md`, `AGENTS.md`, `.gitignore`, `docs/PRODUCT.md`, `docs/ROADMAP.md`, `docs/ACCEPTANCE.md` and `docs/STATUS.md` may change. This is documentation only: no application code, dependencies, cloud resources or follow-on milestone work.
+The current authorised task defines its permitted files and operations. Task-specific scope restrictions expire with that task unless deliberately incorporated into durable project documentation. Follow both these repository rules and the current task; if they conflict, stop and report the conflict rather than silently overriding either. Completing one task does not authorise work on the next task or milestone.
