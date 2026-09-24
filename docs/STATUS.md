@@ -1,6 +1,6 @@
 # Status
 
-Snapshot date: **2026-09-24 16:52:06 +01:00** (Europe/London). M00 remains accepted; M01-T01 architecture is ready for review and M01 has not been accepted. See the [product contract](PRODUCT.md), [roadmap](ROADMAP.md), [acceptance register](ACCEPTANCE.md) and [architecture index](architecture/README.md).
+Snapshot date: **2026-09-24 16:58:06 +01:00** (Europe/London). The independently reviewed M01-T01 architecture foundation is accepted for M01 continuation; M01 itself remains in progress. See the [product contract](PRODUCT.md), [roadmap](ROADMAP.md), [acceptance register](ACCEPTANCE.md) and [architecture index](architecture/README.md).
 
 ## M01-T01 inspected repository state
 
@@ -30,8 +30,8 @@ GitHub CLI read-only queries verified repository identity, default branch `main`
 | Item | Current state |
 | --- | --- |
 | Current milestone | M01 — Architecture, threat model and finite support matrix |
-| Current task | M01-T01 — Core architecture and domain boundaries |
-| Task state | READY_FOR_REVIEW |
+| Current task | M01-T01A — Record M01-T01 review and merge architecture foundation |
+| Task state | ACCEPTED FOR M01 CONTINUATION |
 | M00 state | ACCEPTED |
 | M01 state | IN_PROGRESS |
 | Accepted milestones | 1 of 22 |
@@ -39,18 +39,24 @@ GitHub CLI read-only queries verified repository identity, default branch `main`
 | Product verification | REQ-001 through REQ-042 remain NOT_RUN |
 | Application tests for M01-T01 | NOT_APPLICABLE; documentation-only task |
 | Product acceptance requirements | REQ-001 through REQ-042 remain NOT_RUN; planned requirements, not implemented tests |
-| Reviewer acceptance | M00 accepted after independent review; M01 not accepted |
-| Next task | To be issued separately after M01-T01 review; planned M01-T02 is not started |
+| Reviewer acceptance | M00 accepted; M01-T01 accepted for M01 continuation only; M01 not accepted |
+| Next task | To be issued after PR #2 merge is independently verified |
 
-## M01 architecture work
+## M01-T01 review record
 
-M01-T01 proposes the [system architecture](architecture/SYSTEM_ARCHITECTURE.md), [domain model](architecture/DOMAIN_MODEL.md) and seven PROPOSED [architecture decisions](architecture/README.md). The documents define boundaries and invariants only; they do not implement or verify product behaviour. M01-T01 alone does not satisfy REQ-001, because the finite versioned support matrix, financial policies, complete threat model and measurable targets remain outstanding.
+- **Decision:** ACCEPTED FOR M01 CONTINUATION after independent architecture review.
+- **Reviewed revision:** `ade3f4baf0bf0fbb969b37c1a45ef96e56bc669c`.
+- **Accepted task scope:** The [system architecture](architecture/SYSTEM_ARCHITECTURE.md), [canonical domain language](architecture/DOMAIN_MODEL.md), and ADR-001 through ADR-007 as PROPOSED [architecture decisions](architecture/README.md); tenant/trust boundaries, data lifecycle, storage and financial-computation boundaries, asynchronous consistency, authentication/authorisation and collection/execution separation.
+- **Limitations:** M01 remains IN_PROGRESS and ADR-001 through ADR-007 remain PROPOSED until final M01 review. M01-T01 does not satisfy REQ-001. No application functionality, cloud connector or production system exists; no provider data has been ingested, security control operationally verified, or financial calculation product-tested.
+- **Product verification:** REQ-001 through REQ-042 remain NOT_RUN. Application tests for M01-T01 documentation work are NOT_APPLICABLE.
 
-Planned follow-up labels, subject to separate task issuance:
+Remaining M01 work, with planned labels subject to separate task issuance:
 
-- M01-T02 — financial semantics and finite support matrix, including provider mappings and pilot scope.
-- M01-T03 — threat model, data classification and abuse cases, including retention/residency decisions.
-- M01-T04 — measurable operational, security and performance targets, architecture traceability and final M01 review preparation.
+- M01-T02 — financial semantics and finite provider/support matrix.
+- M01-T03 — threat model, data classification, retention/residency and abuse cases.
+- M01-T04 — measurable security, operational and performance targets, requirement traceability and final M01 review package.
+
+The next task is to be issued only after PR #2 merge is independently verified. M01-T02 and M02 have not started.
 
 Before M02 introduces proprietary application code, the repository owner must explicitly decide repository visibility/licensing and branch-protection policy. This task does not change those settings.
 
