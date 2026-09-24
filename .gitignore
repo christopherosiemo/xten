@@ -1,0 +1,71 @@
+# Local environment values; safe placeholder examples remain trackable.
+.env
+.env.*
+!.env.example
+!.env.*.example
+!.env.sample
+
+# Local credentials and private keys (never real secrets in examples).
+secrets/
+.secrets/
+credentials/
+.aws/
+.azure/
+.config/gcloud/
+*.key
+*.pem
+*.p12
+*.pfx
+
+# Python and JavaScript local dependencies and caches.
+.venv/
+venv/
+env/
+node_modules/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+*.tsbuildinfo
+
+# Build and local verification output.
+/build/
+/dist/
+/.next/
+/out/
+/coverage/
+/.coverage
+/htmlcov/
+
+# Local databases and private runtime data, scoped to dedicated locations.
+/local-db/
+/private-data/
+/runtime-data/
+/uploads/
+/exports/
+/backups/
+/logs/
+/data/private/
+/data/local/
+*.sqlite
+*.sqlite3
+*.sqlite-journal
+*.sqlite3-journal
+*.sqlite-wal
+*.sqlite3-wal
+*.sqlite-shm
+*.sqlite3-shm
+
+# Explicitly synthetic fixtures may include local database examples.
+!tests/fixtures/**/*.sqlite
+!tests/fixtures/**/*.sqlite3
+
+# Local editor and operating-system state.
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Do not blanket-ignore CSV, JSON, Parquet or SQL: synthetic fixtures may use them.
